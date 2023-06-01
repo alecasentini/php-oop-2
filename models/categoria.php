@@ -3,7 +3,20 @@ class Categoria
 {
     public $nome;
     public $icona;
-}
 
-$cani = new Categoria('Cani', '<i class="fa-solid fa-dog"></i>');
-$gatti = new Categoria('Gatti', '<i class="fa-solid fa-cat"></i>');
+    public function getCategoryName()
+    {
+        return $this->nome;
+    }
+
+    public function getCategoryIcon()
+    {
+        return $this->icona;
+    }
+
+    public function __construct($nome, $icona)
+    {
+        $this->nome = $nome;
+        $this->icona = $icona;
+    }
+}
