@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/tipoProdotto.php';
+require_once __DIR__ . '/categoria.php';
 class Prodotto
 {
     public $categoria;
@@ -9,7 +10,7 @@ class Prodotto
     public $prezzo;
     public $marca;
 
-    public function __construct($categoria, TipoProdotto $tipo, $immagine, $titolo, $prezzo, $marca)
+    public function __construct(Categoria $categoria, TipoProdotto $tipo, $immagine, $titolo, $prezzo, $marca)
     {
         $this->categoria = $categoria;
         $this->tipo = $tipo;
