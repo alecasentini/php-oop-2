@@ -1,48 +1,21 @@
 <?php
+require_once __DIR__ . '/tipoProdotto.php';
 class Prodotto
 {
-    public $id;
+    public $categoria;
+    public $tipo;
     public $immagine;
     public $titolo;
     public $prezzo;
+    public $marca;
 
-    public function setId($id)
+    public function __construct($categoria, TipoProdotto $tipo, $immagine, $titolo, $prezzo, $marca)
     {
-        $this->id = $id;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setImmagine($immagine)
-    {
+        $this->categoria = $categoria;
+        $this->tipo = $tipo;
         $this->immagine = $immagine;
-    }
-
-    public function getImmagine()
-    {
-        return $this->immagine;
-    }
-
-    public function setTitolo($titolo)
-    {
         $this->titolo = $titolo;
-    }
-
-    public function getTitolo()
-    {
-        return $this->titolo;
-    }
-
-    public function setPrezzo($prezzo)
-    {
         $this->prezzo = $prezzo;
-    }
-
-    public function getPrezzo()
-    {
-        return $this->prezzo;
+        $this->marca = $marca;
     }
 }
