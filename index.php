@@ -34,12 +34,24 @@ require_once __DIR__ . '/models/categoria.php';
                 <div class="p-3" style="background-color:#F2F2F2">
                     <h3 class="my-3"><?php echo $prodotto->titolo; ?></h3>
                     <p class="text-uppercase" style="color: gray;"><?php echo $prodotto->marca; ?></p>
-                    <p class="fw-bolder" style="font-size: 20px;"><?php echo $prodotto->prezzo; ?>€</p>
+
+                    <?php if ($prodotto->isScontoApplicato()) : ?>
+                        <p class="fw-bolder" style="font-size: 20px; color: red;">
+                            <del style="color: gray; font-weight:normal"><?php echo $prodotto->prezzo; ?>€</del>
+                            <?php echo $prodotto->getPrezzoScontato(); ?>€
+                            <span class="badge rounded-pill text-bg-danger">-<?php echo $prodotto->getPercentualeSconto(); ?>%</span>
+                        </p>
+                    <?php else : ?>
+                        <p class="fw-bolder" style="font-size: 20px;">
+                            <?php echo $prodotto->prezzo; ?>€
+                        </p>
+                    <?php endif; ?>
+
                     <div class="w-100 d-flex justify-content-center">
                         <button type="button" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Aggiungi al carrello</button>
                     </div>
-
                 </div>
+
             </div>
         <?php } ?>
 

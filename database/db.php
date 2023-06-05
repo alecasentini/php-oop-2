@@ -30,5 +30,11 @@ $arrayProdotti = [
     $_15 = new Prodotto($gatti, $medicinali, 'https://arcaplanet.vtexassets.com/arquivos/ids/280336-1800-1800/227154-1200-auto.jpg?v=1772064792&quality=1&width=1800&height=1800', "Combo Antiparassitario Spot On Kitten 1 Pipetta", "8.99", "Frontline"),
     $_16 = new Prodotto($gatti, $medicinali, 'https://arcaplanet.vtexassets.com/arquivos/ids/269686-1800-1800/seresto-antiparassitario-gatto.jpg?v=1772064801&quality=1&width=1800&height=1800', "Seresto Collare Antiparassitario per Gatti", "29.99", "Seresto"),
 
-
 ];
+
+$_01->applyDiscount(10);
+$_04->applyDiscount(10);
+$_05->applyDiscount(20);
+$_11->applyDiscount(25);
+$_12->applyDiscount(5);
+$_15->applyDiscount(15);
