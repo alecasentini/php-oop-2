@@ -32,7 +32,11 @@ $arrayProdotti = [
 
 ];
 
-$_01->applyDiscount(10);
+try {
+    $_01->applyDiscount(120);
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage();
+}
 $_04->applyDiscount(10);
 $_05->applyDiscount(20);
 $_11->applyDiscount(25);

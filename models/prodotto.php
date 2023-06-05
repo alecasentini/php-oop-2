@@ -2,6 +2,7 @@
 require_once __DIR__ . '/tipoProdotto.php';
 require_once __DIR__ . '/categoria.php';
 
+
 trait Sconto
 {
     protected $scontoApplicato = false;
@@ -32,6 +33,9 @@ class Prodotto
 
     public function applyDiscount($percentuale)
     {
+        if ($percentuale < 0 || $percentuale > 100) {
+            throw new Exception("La percentuale di sconto deve essere compresa tra 0 e 100");
+        }
         $this->sconto = $percentuale;
         $this->scontoApplicato = true;
         $this->percentualeSconto = $percentuale;

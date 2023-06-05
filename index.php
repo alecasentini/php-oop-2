@@ -36,7 +36,7 @@ require_once __DIR__ . '/models/categoria.php';
                     <p class="text-uppercase" style="color: gray;"><?php echo $prodotto->marca; ?></p>
 
                     <?php if ($prodotto->isScontoApplicato()) : ?>
-                        <p class="fw-bolder" style="font-size: 20px; color: red;">
+                        <p class="fw-bolder text-danger" style="font-size: 20px;">
                             <del style="color: gray; font-weight:normal"><?php echo $prodotto->prezzo; ?>€</del>
                             <?php echo $prodotto->getPrezzoScontato(); ?>€
                             <span class="badge rounded-pill text-bg-danger">-<?php echo $prodotto->getPercentualeSconto(); ?>%</span>
